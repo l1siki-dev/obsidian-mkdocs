@@ -1,0 +1,1 @@
+Good catch on the URL. The `.cjs` (CommonJS) extension suggests that specific file is intended for Node.js environments, but for a browser-based MkDocs site, you'll want to ensure you're pointing to the **UMD** or **ESM** build that the browser can actually execute.
