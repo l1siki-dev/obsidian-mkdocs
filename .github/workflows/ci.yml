@@ -31,4 +31,5 @@ jobs:
       - run: pip install "mkdocs-material[imaging]"
       - run: pip install mkdocs-minify-plugin
       - run: pip install mkdocs-static-i18n
+      - run: pip install mkdocs-include-markdown-plugin
       - run: mkdocs gh-deploy --force
