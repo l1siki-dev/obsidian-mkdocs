@@ -4,7 +4,7 @@ Here is the architecture diagram:
 
 <div 
   class="json-canvas-container" 
-  data-src="docs/canvas/index.canvas" 
+  data-src="canvas/index.canvas" 
   style="width: 100%; height: 600px; border: 1px solid #ddd;">
 </div>
 
