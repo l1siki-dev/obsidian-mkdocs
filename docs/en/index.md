@@ -9,40 +9,37 @@ Here is the architecture diagram:
 </div>
 
 <script type="module">
-import CanvasViewer from "https://esm.sh/json-canvas-viewer@latest";
+import JSONCanvasViewer from "https://esm.sh/json-canvas-viewer@latest";
 
-document.addEventListener("DOMContentLoaded", () => {
+// Wrapper to run logic
+const initCanvases = () => {
   const containers = document.querySelectorAll(".json-canvas-container");
-
   containers.forEach((container) => {
-    // 1. Get the path to the .canvas file
+    if (container.getAttribute("data-loaded")) return; // Prevent double-load
+    
     const canvasPath = container.getAttribute("data-src");
     if (!canvasPath) return;
 
-    // 2. Ensure container has dimensions (critical!)
-    // If not set in CSS, we force a default here to prevent collapse
-    if (!container.style.height) {
-      container.style.height = "600px";
-    }
-    if (!container.style.position) {
-      container.style.position = "relative"; // Library needs this
-    }
-
+    // Set dimensions if missing
+    if (!container.style.height) container.style.height = "600px";
+    
     try {
-      // 3. Initialize the viewer
-      // The library clears the container and sets up the stage
-      const viewer = new CanvasViewer(container);
-
-      // 4. Load the file by URL
-      // This automatically handles the fetching and node parsing
+      const viewer = new JSONCanvasViewer(container);
       viewer.loadCanvas(canvasPath);
-
+      container.setAttribute("data-loaded", "true"); // Mark as processed
     } catch (err) {
-      console.error("Canvas Viewer Error:", err);
-      container.innerHTML = `<div style="padding:1rem; border:1px solid red; color:red;">
-        <strong>Error loading canvas:</strong> ${err.message}
-      </div>`;
+      console.error(err);
     }
   });
-});
+};
+
+// Hook for standard load
+document.addEventListener("DOMContentLoaded", initCanvases);
+
+// Hook for MkDocs Material Instant Loading (if used)
+if (window.document$) {
+  window.document$.subscribe(() => {
+    initCanvases();
+  });
+}
 </script>
