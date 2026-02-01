@@ -1,5 +1,5 @@
 site_name: >-
-  Why Japan's Single-member District Gurrantee Big Party Wins.
+  Why Japan's Single-member District Guarantee Big Party Wins.
 site_description: >-
   How Single-member District Works?
   Who benefits from it?
@@ -69,7 +69,7 @@ plugins:
   - macros
   - social
   - i18n:
-      docs_structure: folder # Options: 'folder' (recommended) or 'suffix'
+      docs_structure: folder 
       fallback_to_default: true
       languages:
         - locale: en
@@ -100,6 +100,7 @@ hooks:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js
+  - https://unpkg.com/json-canvas-viewer/dist/chimp.js
   - javascripts/chart_share.js
   - javascripts/share-headers.js
 
