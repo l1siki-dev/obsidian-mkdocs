@@ -1,0 +1,1 @@
+**One small tip:** The library you're using (the "Chimp" build) usually expects a specific HTML structure. Ensure your Markdown includes the initialization attributes, like this:

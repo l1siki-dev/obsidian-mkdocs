@@ -1,0 +1,1 @@
+If you find the canvas isn't loading on GitHub Pages specifically, it’s almost always because the `.nojekyll` file is missing. Without it, GitHub's internal engine might ignore the assets folder where your `.canvas` file lives.
