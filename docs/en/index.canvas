@@ -38,7 +38,8 @@
 			"width":580,
 			"height":682
 		},
-		{"id":"aef50a0271c302cb","type":"link","url":"https://datawrapper.dwcdn.net/9oMjE/1/","x":160,"y":-40,"width":680,"height":480}
+		{"id":"aef50a0271c302cb","type":"link","url":"https://datawrapper.dwcdn.net/9oMjE/1/","x":160,"y":-40,"width":680,"height":480},
+		{"id":"6e7855d182f23950","x":330,"y":-957,"width":510,"height":717,"type":"file","file":"en/11_Analysis/01_We_are_all_lied_to.md"}
 	],
 	"edges":[
 		{
