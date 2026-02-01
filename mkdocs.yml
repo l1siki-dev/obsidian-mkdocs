@@ -78,7 +78,6 @@ plugins:
         - locale: ja
           name: 日本語
   - minify
-  - include-markdown
 
 markdown_extensions:
   - admonition
