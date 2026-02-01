@@ -63,6 +63,6 @@ def on_nav(nav, config, files):
         first_item = nav.items[0]
         if hasattr(first_item, 'file') and first_item.file and first_item.file.src_path in ROOT_PATHS:
             log.info("🏠 Renaming first tab to Home Icon")
-            first_item.title = "🏠"
+            first_item.title = "Why"
 
     return nav
