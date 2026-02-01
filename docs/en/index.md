@@ -1,3 +1,10 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <title>index</title>
