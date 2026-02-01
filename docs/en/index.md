@@ -4,4 +4,4 @@ hide:
   - toc
 ---
 
-{% include "canvas/docs.html" %}
+{% include "canvas/index.html" %}
