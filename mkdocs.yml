@@ -99,7 +99,6 @@ hooks:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js
-  - javascripts/canvas-loader.js
   - javascripts/chart_share.js
   - javascripts/share-headers.js
 
