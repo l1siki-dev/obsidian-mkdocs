@@ -2,8 +2,8 @@
 	"nodes":[
 		{"id":"2a20456f534baca9","type":"group","x":-620,"y":560,"width":760,"height":760,"label":"Untitled group"},
 		{"id":"a313afb4147f8914","type":"file","file":"en/11_Analysis/test1.md","x":-524,"y":600,"width":569,"height":260},
-		{"id":"46943c7bbad5accb","type":"file","file":"en/11_Analysis/test2.md","ratio":1.7777777777777777,"x":-572,"y":900,"width":665,"height":374},
-		{"id":"8c9a9706b6206eb7","type":"file","file":"en/11_Analysis/why this is happening.md","ratio":1,"x":-1160,"y":80,"width":480,"height":480},
+		{"id":"46943c7bbad5accb","type":"file","file":"en/11_Analysis/test2.md","x":-572,"y":900,"width":665,"height":374},
+		{"id":"8c9a9706b6206eb7","type":"file","file":"en/11_Analysis/why this is happening.md","x":-1160,"y":80,"width":480,"height":480},
 		{
 			"id":"70156e7b531929ac",
 			"type":"text",
@@ -70,5 +70,9 @@
 			"toNode":"8c9a9706b6206eb7",
 			"toSide":"top"
 		}
-	]
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
 }
