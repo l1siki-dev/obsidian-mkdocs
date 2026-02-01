@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 <div style="height: 500px; width: 100%; border: 1px solid #ddd;">
-  <json-canvas data-src="../index.canvas"></json-canvas>
+  <json-canvas data-src="docs\en\index.canvas"></json-canvas>
 </div>
 
 <script type="module">
