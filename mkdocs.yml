@@ -78,8 +78,7 @@ plugins:
         - locale: ja
           name: 日本語
   - minify
-          
-
+  - include-markdown
 
 markdown_extensions:
   - admonition
@@ -100,6 +99,8 @@ hooks:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js
+  - https://esm.sh/json-canvas-viewer@latest
+  - javascripts/canvas-loader.js
   - javascripts/chart_share.js
   - javascripts/share-headers.js
 
