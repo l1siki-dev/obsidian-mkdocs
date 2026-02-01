@@ -9,36 +9,40 @@ Here is the architecture diagram:
 </div>
 
 <script type="module">
-  import { JSONCanvasViewer } from "https://esm.sh/json-canvas-viewer@latest";
-  document.addEventListener("DOMContentLoaded", () => {
-    // Find all containers we want to turn into canvases
-    const containers = document.querySelectorAll(".json-canvas-container");
+import CanvasViewer from "https://esm.sh/json-canvas-viewer@latest";
 
-    containers.forEach(async (container) => {
-      const canvasPath = container.getAttribute("data-src");
-      
-      if (!canvasPath) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const containers = document.querySelectorAll(".json-canvas-container");
 
-      // 1. Fetch the .canvas file content
-      try {
-        const response = await fetch(canvasPath);
-        if (!response.ok) throw new Error(`Failed to load ${canvasPath}`);
-        const canvasData = await response.json();
+  containers.forEach((container) => {
+    // 1. Get the path to the .canvas file
+    const canvasPath = container.getAttribute("data-src");
+    if (!canvasPath) return;
 
-        // 2. Initialize the viewer
-        // Clean the container first just in case
-        container.innerHTML = "";
-        
-        const viewer = new JSONCanvasViewer(container);
-        
-        // 3. Load the data into the viewer
-        // The library API might vary slightly by version, but typically:
-        viewer.loadData(canvasData);
+    // 2. Ensure container has dimensions (critical!)
+    // If not set in CSS, we force a default here to prevent collapse
+    if (!container.style.height) {
+      container.style.height = "600px";
+    }
+    if (!container.style.position) {
+      container.style.position = "relative"; // Library needs this
+    }
 
-      } catch (err) {
-        console.error(err);
-        container.innerHTML = `<p style="color:red">Error loading canvas: ${err.message}</p>`;
-      }
-    });
+    try {
+      // 3. Initialize the viewer
+      // The library clears the container and sets up the stage
+      const viewer = new CanvasViewer(container);
+
+      // 4. Load the file by URL
+      // This automatically handles the fetching and node parsing
+      viewer.loadCanvas(canvasPath);
+
+    } catch (err) {
+      console.error("Canvas Viewer Error:", err);
+      container.innerHTML = `<div style="padding:1rem; border:1px solid red; color:red;">
+        <strong>Error loading canvas:</strong> ${err.message}
+      </div>`;
+    }
   });
+});
 </script>
