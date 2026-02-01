@@ -9,7 +9,7 @@ Here is the architecture diagram:
 </div>
 
 <script type="module">
-import JSONCanvasViewer from "https://esm.sh/json-canvas-viewer@latest";
+import { CanvasViewer } from "https://esm.sh/json-canvas-viewer@latest";
 
 // Wrapper to run logic
 const initCanvases = () => {
@@ -24,7 +24,7 @@ const initCanvases = () => {
     if (!container.style.height) container.style.height = "600px";
     
     try {
-      const viewer = new JSONCanvasViewer(container);
+      const viewer = new CanvasViewer(container);
       viewer.loadCanvas(canvasPath);
       container.setAttribute("data-loaded", "true"); // Mark as processed
     } catch (err) {
